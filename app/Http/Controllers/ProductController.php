@@ -3,17 +3,19 @@
 namespace App\Http\Controllers;
 
 use App\Models\Product;
-use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
+use App\Http\Controllers\Controller;
+
 
 class ProductController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
-    public function index()
+    public function index(Product $product)
     {
-        return Product::latest()->filter(request(['search']))->get();
+        return Product::latest()->filter(request(['search', 'category']))->get();
     }
 
     /**
@@ -34,6 +36,7 @@ class ProductController extends Controller
             'description' => ['required'],
             'price' => ['required'],
             'imageUrl' => ['required'],
+            'category_id' => ['required'],
             'rating' => ['required'],
         ]);
 
