@@ -15,7 +15,7 @@ class ProductController extends Controller
      */
     public function index()
     {
-        return Product::latest()->filter(request(['search', 'category']))->get();
+        return Product::orderBy('name', 'asc')->filter(request(['search', 'category']))->get();
     }
 
     /**
