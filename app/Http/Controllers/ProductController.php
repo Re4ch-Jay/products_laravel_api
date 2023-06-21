@@ -13,7 +13,7 @@ class ProductController extends Controller
     /**
      * Display a listing of the resource.
      */
-    public function index(Product $product)
+    public function index()
     {
         return Product::latest()->filter(request(['search', 'category']))->get();
     }

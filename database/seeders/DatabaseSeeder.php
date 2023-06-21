@@ -23,15 +23,15 @@ class DatabaseSeeder extends Seeder
         //     'email' => 'test@example.com',
         // ]);
 
-        Category::factory()->create([
-            'name' => 'Clothes',
-        ]);
-        Category::factory()->create([
-            'name' => 'Books',
-        ]);
-        Category::factory()->create([
-            'name' => 'Sneakers',
-        ]);
-        Product::factory(60)->create();
+        // Category::factory()->create([
+        //     'name' => 'Clothes',
+        // ]);
+        // Category::factory()->create([
+        //     'name' => 'Books',
+        // ]);
+        // Category::factory()->create([
+        //     'name' => 'Sneakers',
+        // ]);
+        Product::factory(20)->create();
     }
 }
